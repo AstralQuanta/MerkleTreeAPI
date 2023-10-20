@@ -1,0 +1,46 @@
+@options
+@packages
+-classpath
+'C:/Users/blueo/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.76/bcprov-jdk18on-1.76.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'C:/Users/blueo/Documents/MerkleTreeAPI/src/main/java;C:/Users/blueo/Documents/MerkleTreeAPI/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/blueo/Documents/MerkleTreeAPI/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'merkletreeapi 0.0.1 API'
+-use
+-version
+-windowtitle
+'merkletreeapi 0.0.1 API'
+com.blueokanna.merkletreeapi
+C:\Users\blueo\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar = 1697782696754
+C:\Users\blueo\Documents\MerkleTreeAPI\src\main\java = 1697789562200
+C:\Users\blueo\Documents\MerkleTreeAPI\target\generated-sources\annotations = 1697789712072
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\allclasses-index.html = 1697789715281
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\allpackages-index.html = 1697789715284
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\element-list = 1697789715240
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\help-doc.html = 1697789715305
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\index-all.html = 1697789715299
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\index.html = 1697789715300
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\jquery-ui.overrides.css = 1697789715320
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\member-search-index.js = 1697789715289
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\module-search-index.js = 1697789715285
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\overview-tree.html = 1697789715269
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\package-search-index.js = 1697789715286
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\script.js = 1697789715309
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\search.js = 1697789715312
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\stylesheet.css = 1697789715308
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\tag-search-index.js = 1697789715289
+C:\Users\blueo\Documents\MerkleTreeAPI\target\apidocs\type-search-index.js = 1697789715288
