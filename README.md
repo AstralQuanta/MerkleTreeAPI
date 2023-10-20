@@ -1,6 +1,4 @@
 # 默克尔树 MerkleTree (基于时间复杂度为 O(n))
-![image](https://github.com/blueokanna/MerkleTree/assets/56761243/3f59ba1d-7af6-4453-aa65-41499456a676) ![image](https://github.com/blueokanna/MerkleTree/assets/56761243/bbd15815-f65a-4b3f-9543-4ba3cc972644)
-![image](https://github.com/blueokanna/MerkleTree/assets/56761243/2ce4a888-14cd-4457-9d9e-439f218c2b52) 
 
 ----
 
