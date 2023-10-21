@@ -1,4 +1,4 @@
-package com.blueokanna.merkletreeapi;
+package gay.blueokanna.merkletreeapi;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
