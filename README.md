@@ -1,6 +1,5 @@
 # 默克尔树 FastMerkleTree
 ![image](https://github.com/blueokanna/MerkleTreeAPI/assets/56761243/05d496fd-0c45-4fef-ab88-852786cfa65b)
-![Github Action Pass](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 
 ----
 
