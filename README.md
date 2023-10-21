@@ -15,6 +15,32 @@
 2. 对于其他的 **MerkleTree** ，其时间复杂度基本上为 **O(n) + O(log2(n))** 或者是  **O(n)**，在本项目中，其具有更快的速度以及优化后的时间复杂度**O(log n)**
 3. 对于其他的项目，这里的接口相比于一些传统的 **MerkleTree** 更加丰富，`可以自定义需要的线程数，以及更多的安全摘要算法的选择`（以下会介绍）
 
+### Java 项目调用本项目的 FastMerkleTree：
+**Maven Dependency**:
+```
+<dependency>
+    <groupId>gay.blueokanna</groupId>
+    <artifactId>merkletreeapi</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
+**Gradle:**
+```
+ implementation group: 'gay.blueokanna', name: 'merkletreeapi', version: '0.0.1'
+```
+**Gradle(Kotlin)**
+```
+implementation("gay.blueokanna:merkletreeapi:0.0.1")
+```
+**ivy:**
+```
+<dependency org="gay.blueokanna" name="merkletreeapi" rev="0.0.1"/>
+```
+**sbt:**
+```
+libraryDependencies += "gay.blueokanna" % "merkletreeapi" % "0.0.1"
+```
+
 ### FastMerkleTree 的使用方法：
 **可以使用的摘要算法有以下这些：**
 ```
