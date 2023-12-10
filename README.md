@@ -1,27 +1,30 @@
-# 默克尔树 FastMerkleTree
+# Merkle Tree FastMerkleTree
 ![image](https://github.com/blueokanna/MerkleTreeAPI/assets/56761243/05d496fd-0c45-4fef-ab88-852786cfa65b)
+[![Apache Java](https://img.shields.io/badge/logo-apache-yellow?logo=apache-maven)](https://www.apache.org/foundation/marks/)
+[![License](http://img.shields.io/:license-apache-green.svg?style=flat)](https://www.apache.org/licenses/)
+[![Hits](https://hits.sh/github.com/blueokanna/MerkleTreeAPI.git.svg?color=fe7d37)](https://hits.sh/github.com/blueokanna/MerkleTreeAPI.git/)
 
 ----
 
-> **请注意这个 Java 项目是基于 JDK 17 的**
+> **Please note that this Java project is based on JDK 17**
  
-### 介绍 FastMerkleTree
-> MerkleTree 是一种二叉树数据结构，主要用于高效地存储和验证大量数据。默克尔树的应用场景非常广泛，例如在比特币区块链系统中就采用这个结构。比特币区块链使用 MerkleTree 来存储所有的交易记录，这样可以确保数据的完整性和安全性。当然在分布式的系统和一些密码学领域，默克尔树也有着广泛的应用。
+### Introducing the FastMerkleTree
+> MerkleTree is a binary tree data structure mainly used to store and validate large amounts of data efficiently. Merkle trees are used in a wide range of application scenarios, for example, this structure is used in the Bitcoin blockchain system. The Bitcoin blockchain uses MerkleTree to store all transaction records, which ensures data integrity and security. Of course, Merkle trees are also widely used in distributed systems and in some areas of cryptography.
 
 
-### 对于其他的 **MerkleTree** 对比
-1. 对比于其他的 **MerkleTree** 项目，本项目提供的是采用并行异步计算哈希值，让项目更快的运行进而得到项目结果。
-2. 对于其他的 **MerkleTree** ，其时间复杂度基本上为 **O(n) + O(log2(n))** 或者是  **O(n)**，在本项目中，其具有更快的速度以及优化后的时间复杂度**O(log n)**
-3. 对于其他的项目，这里的接口相比于一些传统的 **MerkleTree** 更加丰富，`可以自定义需要的线程数，以及更多的安全摘要算法的选择`（以下会介绍）
+### Comparison to other **MerkleTrees**
+1. Compared to other **MerkleTree** projects, this project provides parallel asynchronous hash computation, which allows the project to run faster and get results. 2.
+2. for other **MerkleTree**, the time complexity is basically **O(n) + O(log2(n))** or **O(n)**, in this project, it has a much faster and optimised time complexity **O(log n)**. 3. for other projects, here is a comparison of the project with other **MerkleTree** projects.
+3. For other projects, the interface here is richer than some traditional **MerkleTree**, with ``the ability to customise the number of threads needed, and more options for safe digest algorithms'' (described below).
 
-### Java 项目调用本项目的 FastMerkleTree：
-**Maven Dependency**:
+### The Java project calls FastMerkleTree from this project:
+**Maven Dependency**.
 ```
 <dependency>
     <groupId>gay.blueokanna</groupId>
     <artifactId>merkletreeapi</artifactId>
     <version>0.0.1</version>
-</dependency>
+</dependency
 ```
 **Gradle:**
 ```
@@ -40,8 +43,8 @@ implementation("gay.blueokanna:merkletreeapi:0.0.1")
 libraryDependencies += "gay.blueokanna" % "merkletreeapi" % "0.0.1"
 ```
 
-### FastMerkleTree 的使用方法：
-**可以使用的摘要算法有以下这些：**
+### How FastMerkleTree is used:
+**The summary algorithms that can be used are these:**
 ```
 MD5
 SHA1
@@ -54,62 +57,62 @@ Whirlpool
 RIPEMD160
 ```
 
-**默认使用的 MerkleTree 库，以下为默认的 SHA-256 以及全线程的使用**
+**MerkleTree libraries used by default, the following SHA-256 by default and fully threaded**
 ```
-Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors(); //全线程运算
+Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors(); // fully threaded computing
 ```
-```
-public static void main(String... args){
-  MerkleTree merkleTrees = new MerkleTree(); //初始化 MerkleTree
-  merkleTrees.addBlock("Block1");  //添加Block1
-  merkleTrees.addBlock("Block2");  //添加Block2
-  merkleTrees.addBlock("Block3");  //添加Block3
-  merkleTrees.addBlock("Block4");  //添加Block4
-  System.out.println("MerkleTree Root: " + merkleTrees.computeRootHash());
-  merkleTrees.shutdown();        //这里计算完成，关闭线程的使用
-}
-
-输出的 MerkleTree Root 结果为：ae6d557bddd73e31cf344e2f7a1eb52805dc1eeae489a1b62d8f701535978cf5
-```
-> SHA256 四个区块可以验证的网站：https://blockchain-academy.hs-mittweida.de/merkle-tree/
-
-**自定义使用的 MerkleTree 库，以下为自定义摘要算法以及全线程的使用**
 ```
 public static void main(String... args){
-  MerkleTree merkleTrees = new MerkleTree("Whirlpool"); //初始化 MerkleTree,使用 Whirlpool 摘要算法
-  merkleTrees.addBlock("Block1");  //添加Block1
-  merkleTrees.addBlock("Block2");  //添加Block2
-  merkleTrees.addBlock("Block3");  //添加Block3
-  merkleTrees.addBlock("Block4");  //添加Block4
+  MerkleTree merkleTrees = new MerkleTree(); //initialise MerkleTree
+  merkleTrees.addBlock("Block1"); //add Block1
+  merkleTrees.addBlock("Block2"); //add Block2
+  merkleTrees.addBlock("Block3"); //add Block3
+  merkleTrees.addBlock("Block4"); //add Block4
   System.out.println("MerkleTree Root: " + merkleTrees.computeRootHash());
-  merkleTrees.shutdown();        //这里计算完成，关闭线程的使用
+  merkleTrees.shutdown(); // here the computation is done, shutting down the use of threads
 }
 
-输出的 MerkleTree Root 结果为：
+The output MerkleTree Root result is: ae6d557bddd73e31cf344e2f7a1eb52805dc1eeae489a1b62d8f701535978cf5
+```
+> SHA256 four blocks can be verified at [Hash Calculator](https://blockchain-academy.hs-mittweida.de/merkle-tree/)
+
+**Custom use of the MerkleTree library, following custom digest algorithms as well as full-threaded usage**
+```
+public static void main(String... args){
+  MerkleTree merkleTrees = new MerkleTree("Whirlpool"); //Initialise MerkleTree, use Whirlpool digest algorithm.
+  merkleTrees.addBlock("Block1"); //add Block1
+  merkleTrees.addBlock("Block2"); //add Block2
+  merkleTrees.addBlock("Block3"); //add Block3
+  merkleTrees.addBlock("Block4"); //add Block4
+  System.out.println("MerkleTree Root: " + merkleTrees.computeRootHash());
+  merkleTrees.shutdown(); // here the computation is done, shutting down the use of threads
+}
+
+The output MerkleTree Root result is:
 954bc93569176cb8b8097381a48a3423b4a98dab9c04276cbcea6f439bc860260b9bbfdb030f75621527c445e962289c063177eb4739fbee500f86ac84e11738
 ```
 
 ```
 public static void main(String... args){
-  MerkleTree merkleTrees = new MerkleTree("RIPEMD160"，8); //初始化 MerkleTree,使用 RIPEMD160 摘要算法，并且使用 8 个线程
-  merkleTrees.addBlock("Block1");  //添加Block1
-  merkleTrees.addBlock("Block2");  //添加Block2
-  merkleTrees.addBlock("Block3");  //添加Block3
-  merkleTrees.addBlock("Block4");  //添加Block4
+  MerkleTree merkleTrees = new MerkleTree("RIPEMD160", 8); //Initialise MerkleTree, using the RIPEMD160 digest algorithm, and using 8 threads.
+  merkleTrees.addBlock("Block1"); //add Block1
+  merkleTrees.addBlock("Block2"); //add Block2
+  merkleTrees.addBlock("Block3"); //add Block3
+  merkleTrees.addBlock("Block4"); //add Block4
   System.out.println("MerkleTree Root: " + merkleTrees.computeRootHash());
-  merkleTrees.shutdown();        //这里计算完成，关闭线程的使用
+  merkleTrees.shutdown(); // here the computation is done, shutting down the use of threads
 }
 
-输出的 MerkleTree Root 结果为：6024b95047cb52e80a87ed3b429d05acd00999d9
+The output MerkleTree Root result is: 6024b95047cb52e80a87ed3b429d05acd00999d9
 ```
 ----
 
-> 可以设计代码，通过 for 循环，连续生成 10000 个 Block，名字为 Block1, Block2， Block3......，Block10000，将这 10000 个区块相加获得最后的区块值。
+> You can design code to continuously generate 10000 Blocks, named Block1, Block2, Block3......, Block10000, through a for loop. , Block10000, and add these 10000 blocks to get the final block value.
 
-对于作者的电脑来说 **（全线程的 SHA256 算法）**，生成一万个花费的时间为 **00:00:734**，最后总花费的时间为 **00:00:881** 通过简单的时间差也就可以知道计算得到的 MerkleTree 的相加得到最后根的哈希值总计算时间为 **00:00:147**
+For the author's computer **(full-threaded SHA256 algorithm)**, the time taken to generate 10,000 is **00:00:734**, and the total time taken at the end is **00:00:881** By the simple time difference, it is also possible to know that the summation of the MerkleTree obtained by the computation yields the hash value of the final root in total computation time **00:00: 147***, and the total computation time of the hash value of the final root is **00:00: 147***. 147**
 
-### 原理介绍（这里使用 SHA-256）
-将两个区块的哈希值分别算出来，加起来，由 4 -> 2 -> 1 这样的顺序，如果为奇数个 Block 那么它将从左边开始，两两结合，比如有五个区块，那么从左向右的四个区块会合并成两个，如果还是出现奇数个区块，继续从左向右两两结合，原来还剩下的一个区块向上传递，直到出现奇数个 Block 的时候，两两结合生成 **MerkleTree** 的区块，一般来说这个区块的父区块为 root 区块，也就是我们所求的。
+### Principle (SHA-256 is used here)
+The hash value of the two blocks will be counted out and added up, from 4 -> 2 -> 1 in this order, if there is an odd number of Blocks, then it will start from the left, two by two, for example, there are five blocks, then the four blocks from the left to the right will be merged into two, if there is still an odd number of blocks, continue to combine two by two from the left to the right, and the original remaining one block upward until there are an odd number of blocks, the two by two to generate If there are still an odd number of blocks, then the four blocks on the left will be merged into two, and if there is still an odd number of blocks, then the two blocks will be merged into two.
 
 ----
-最后感谢 **@bcgit** 的 **Bouncycastle** 的提供的加密算法
+Finally, thanks to **@bcgit** for the **Bouncycastle** encryption algorithm!
